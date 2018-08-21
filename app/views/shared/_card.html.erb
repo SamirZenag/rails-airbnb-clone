@@ -1,9 +1,9 @@
-<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @car.photo, height: 300, width: 400, crop: :fill %>');">
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path "mclaren-720s", height: 40, width: 30, crop: :fill %>);">
   <div class="card-description">
-    <h2>@car.model</h2>
-    <p>@car.price</p>
+    <h2>Model: <%= car.model %></h2>
+    <p>Brand: <%= car.brand %></p>
   </div>
-  <div class="card-category">@car.brand</div>
-  <img class="card-user" src='<%= cl_image_path @user.photo, height: 40, width: 40, crop: :fill %>'>
+  <div class="card-price">Price per a day: <%= car.price %></div>
+  <%= image_tag "mclaren-720s.jpg", class: "card-user", height: 40, width: 40 %>
   <a class="card-link" href="/car/show" ></a>
 </div>
