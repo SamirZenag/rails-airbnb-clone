@@ -1,0 +1,20 @@
+  <form method="get" action="<%= cars_path %>" class="flex-form">
+
+    <input type="search" placeholder="Where do you wanna go?" />
+    <label for="from">From</label>
+    <input type="date" name="from" />
+
+    <label for="to">To</label>
+    <input type="date" name="to" />
+
+    <select name="brands" id="brands">
+      <option value="1">Lambo</option>
+      <option value="2">Ferrari</option>
+      <option value="3">Maserati</option>
+      <option value="4">Aston Martin</option>
+      <option value="5">Bugatti</option>
+    </select>
+
+    <input type="submit" value="Search" />
+
+  </form>
