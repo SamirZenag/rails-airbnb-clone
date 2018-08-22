@@ -1,6 +1,7 @@
 class CarPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
+      # scope.where.not(latitude: nil, longitude: nil)
       scope.all
     end
   end

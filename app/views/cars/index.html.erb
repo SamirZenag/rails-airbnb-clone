@@ -1,21 +1,36 @@
-
 <div class="container">
   <%= render 'shared/searchform' %>
   <div class="row">
-    <div class="col-xs-0 col-sm-3 refine-search">
-      <h3>Refine search</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-    </div>
+    <div class="col-xs-0 col-sm-3 ">
+      <div class="refine-search">
+        <button type="button" id="map-button" class="btn btn-success">
+          See Map / List
+        </button>
 
-    <div class="col-xs-12 col-sm-9">
-      <div class="row" style="width: 100%">
-        <% @cars.each do |car| %>
-            <div class="col-xs-12 col-sm-6">
-              <%= render 'shared/card', car: car %>
-            </div>
-        <% end %>
+        <h3>Refine search</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
       </div>
     </div>
+
+    <div class="col-xs-12 col-sm-9" style=" height: 500px;">
+      <div class="row" id="list" style="width: 100%;">
+        <% @cars.each do |car| %>
+          <div class="col-xs-12 col-sm-6">
+            <%= render 'shared/card', car: car %>
+          </div>
+        <% end %>
+      </div>
+      <div class="map-div">
+        <div
+          id="map"
+          style="width: 100%;
+          height: 600px;"
+          data-markers="<%= @markers.to_json %>"
+          >
+        </div>
+      </div>
+    </div>
+
   </div>
 
 </div>
