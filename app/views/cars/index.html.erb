@@ -1,16 +1,21 @@
 
 <div class="container">
-
+  <%= render 'shared/searchform' %>
   <div class="row">
+    <div class="col-xs-0 col-sm-3 refine-search">
+      <h3>Refine search</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    </div>
 
-  </div>
-
-  <div class="row">
-    <% @cars.each do |car| %>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <%= render 'shared/card', car: car %>
-        </div>
-    <% end %>
+    <div class="col-xs-12 col-sm-9">
+      <div class="row" style="width: 100%">
+        <% @cars.each do |car| %>
+            <div class="col-xs-12 col-sm-6">
+              <%= render 'shared/card', car: car %>
+            </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 
 </div>

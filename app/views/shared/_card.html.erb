@@ -1,9 +1,15 @@
-<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path "mclaren.jpg", height: 40, width: 30, crop: :fill %>);">
-  <div class="card-description">
-    <h2>Model: <%= car.model %></h2>
-    <p>Brand: <%= car.brand %></p>
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path "mclaren.jpg", height: 30, width: 30, crop: :fill %>);">
+  <div>
+    <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "card-user" %>
+    <a class="card-link" href="/car/<%= car.id %>" ></a>
   </div>
-  <div class="card-price">Price per a day: <%= car.price %></div>
-  <%= image_tag "mclaren.jpg", class: "card-user", height: 40, width: 40 %>
-  <a class="card-link" href="/car/show" ></a>
+  <div class="card-footer">
+    <div class="card-description">
+      <h5>
+        <b>Model: <%= car.model %></b><br>
+        <em>Brand: <%= car.brand %></em><br>
+        Price per a day: <%= car.price %> euros
+      </h5>
+    </div>
+  </div>
 </div>

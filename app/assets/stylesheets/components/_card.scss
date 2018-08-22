@@ -1,29 +1,25 @@
 .card {
-  height: 175px;
+  height: 200px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
   color: white;
   position: relative;
+  margin: 10px;
+  height: 200px;
+  border: 2px solid black;
 }
 .card-user {
   position: absolute;
   right: 10px;
-  top: 10px;
+  bottom: 10px;
   width: 40px;
   border-radius: 50%;
 }
 .card-description {
   position: absolute;
-  bottom: 30px;
+  bottom: 0px;
   left: 10px;
-}
-.card-price {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  font-size: 15px;
-  text-transform: uppercase;
 }
 .card-description h2 {
   font-size: 24px;
@@ -45,4 +41,13 @@
 }
 .card-link:hover {
   opacity: 0.1;
+}
+
+.card-footer {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  height: 80px;
+  // border: 2px solid black;
 }
