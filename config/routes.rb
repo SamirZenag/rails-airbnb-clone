@@ -5,10 +5,10 @@ Rails.application.routes.draw do
   resources :cars, except: [:destroy] do
     resources :bookings, only: [:new, :create]
   end
-  resources :bookings, only: [:edit, :update] do
-    member do
-      get 'reviews', to: 'bookings#form_review'
-      post 'reviews', to: 'bookings#create_review'
-    end
-  end
+
+  get 'bookings/:booking_id/reviews/new', to: 'reviews#new'
+  post 'bookings/:booking_id/reviews', to: 'reviews#create', as: :booking_reviews
+  get 'dashboard/listings', to: 'dashboard#listings'
+  get 'dashboard/rentals', to: 'dashboard#rentals'
+
 end
