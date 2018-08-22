@@ -22,6 +22,18 @@
   </div>
 </div>
 
+<div class="btn-align">
+      <% if policy(@car).edit? %>
+        <%= link_to "edit your car", edit_car_path(@car.id), id:"submit-btn" %>
+      <% end %>
+          <% if policy(@car).destroy? %>
+          <div class="delete-form">
+            <%= simple_form_for @car, method: :delete do |f| %>
+              <%= f.submit "delete your car", id: "delete-btn" %>
+            <% end %>
+          <% end %>
+      </div>
+</div>
 
 
 

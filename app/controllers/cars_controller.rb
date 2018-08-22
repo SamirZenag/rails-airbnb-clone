@@ -3,16 +3,22 @@ class CarsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @cars = Car.all
+    @cars = policy_scope(Car)
   end
 
   def new
-    @car = Car.new
+    @car = current_user.cars.new
+    authorize @car
   end
 
   def create
     @car = Car.new(car_params)
+<<<<<<< HEAD
     @car.user = current_user
+=======
+    authorize @car
+
+>>>>>>> 70a3cc35cab035a8262a4d23337c264ed6cb583e
     if @car.save
       redirect_to car_path(@car)
     else
@@ -21,19 +27,23 @@ class CarsController < ApplicationController
   end
 
   def show
+    authorize @car
   end
 
   def edit
+    authorize @car
   end
 
   def update
     @car.update(car_params)
+    authorize @car
     # no need for app/views/cars/create.html.erb
     redirect_to car_path(@car)
   end
 
   def destroy
     @car.destroy
+    authorize @cars
     # no need for app/views/cars/destroy.html.erb
     redirect_to cars_path
   end
@@ -46,5 +56,6 @@ class CarsController < ApplicationController
 
   def set_car
     @car = Car.find(params[:id])
+    authorize @car
   end
 end
