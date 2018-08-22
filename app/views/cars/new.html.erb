@@ -1,0 +1,12 @@
+
+<div class="container">
+<h1>Add a car</h1>
+
+   <%= render 'form', car: @car %>
+   <br>
+   <br>
+
+   <i class="fas fa-chevron-left" aria-hidden="true">
+      <%= link_to "Back to selection", cars_path, class: "link" %>
+    </i>
+</div>
