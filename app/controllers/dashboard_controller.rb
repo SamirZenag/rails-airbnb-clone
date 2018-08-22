@@ -3,5 +3,6 @@ class DashboardController < ApplicationController
 
   def listings
     @cars = current_user.cars
+    @bookings = policy_scope(Booking)
   end
 end

@@ -22,8 +22,6 @@ standard_user = User.create!(email: 'toto@toto.fr', password: 'password')
     description:'Very nice car',
     price: [100, 150, 200].sample ,
     user: standard_user,
-    lat: Faker::Address.latitude.to_i,
-    lng: Faker::Address.longitude.to_i,
     address: Faker::Address.street_address,
     city: Faker::Address.city,
     postal_code: Faker::Address.zip_code,
