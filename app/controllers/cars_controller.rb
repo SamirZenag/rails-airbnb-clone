@@ -15,7 +15,7 @@ class CarsController < ApplicationController
   end
 
   def new
-    @car = current_user.cars.new
+    @car = Car.new
     authorize @car
   end
 
