@@ -13,12 +13,8 @@ class CarsController < ApplicationController
 
   def create
     @car = Car.new(car_params)
-<<<<<<< HEAD
     @car.user = current_user
-=======
     authorize @car
-
->>>>>>> 70a3cc35cab035a8262a4d23337c264ed6cb583e
     if @car.save
       redirect_to car_path(@car)
     else
