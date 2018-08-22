@@ -7,13 +7,17 @@
   </head>
   <body>
     <!-- Code your banner HTML here -->
-    <div class="banner" style="background-image: url(http://www.elbalad.news/upload/photo/gallery/152/3/442.jpg)">
-      <h1>The ultimate driving experience</h1>
-      <p>Imagine being behind the wheel of the most luxurious car on the planet</p>
-      <a class="btn-primary">Live the dream</a>
+    <div class="banner">
+      <div class="banner-back">
+        <div class="video-background">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/PNdIDy6usaU?autoplay=1&amp;mute=1&amp;rel=0&amp;controls=0&amp;showinfo=0&amp;start=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="banner-content">
+          <h1>The ultimate driving experience</h1>
+          <p>Imagine being behind the wheel of the most luxurious car on the planet</p>
+        </div>
+      </div>
       <%= render 'shared/searchform' %>
     </div>
-
-
   </body>
 </html>
