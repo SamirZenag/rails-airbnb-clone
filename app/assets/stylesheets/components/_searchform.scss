@@ -7,16 +7,18 @@
 .flex-form {
   display: flex;
   border: 20px solid rgba(0,0,0,0);
-  border-radius: 10px;
-
+  border-radius: 50px;
+  justify-content: space-between;
 }
 
 label {
   color: grey;
+  border-radius: 50px;
 }
 
-input[type=search] {
+input[type=start] {
   flex-basis: 500px;
+  border-radius: 50px;
 }
 
 .flex-form > * {
@@ -27,10 +29,18 @@ input[type=search] {
   border-radius: 0;
   outline: 0;
   background: #fff;
-  margin-left: 1px;
+  margin-left: 10px;
 }
 
 .flex-form input[type=submit] {
   background: #f05;
   color: white;
+  border-radius: 50px;
+}
+
+.flex-form input[type=submit]:hover{
+  color: #ffffff;
+  background-color: #000000;
+  box-shadow: 0 0 5px rgba(59, 91, 214, 0.4);
+  margin: 0;
 }
