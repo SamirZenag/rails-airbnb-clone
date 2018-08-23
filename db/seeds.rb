@@ -5,9 +5,9 @@ User.destroy_all
 
 puts 'Creating 3 users...'
 
-first_user = User.create!(first_name: 'Josh', last_name: 'DENVER', email: 'toto@toto.fr', password: 'password')
-second_user = User.create!(first_name: 'Alison', last_name: 'KIVER', email: 'tata@tata.fr', password: 'password')
-third_user = User.create!(first_name: 'Alan', last_name: 'PORTLAND',email: 'tutu@tutu.fr', password: 'password')
+first_user = User.create!(first_name: 'Josh', last_name: 'DENVER', email: 'toto@toto.fr', password: 'password', remote_photo_url: 'https://www.photocase.com/photos/56995-face-child-boy-child-laughter-hair-and-hairstyles-mouth-photocase-stock-photo-large.jpeg')
+second_user = User.create!(first_name: 'Alison', last_name: 'KIVER', email: 'tata@tata.fr', password: 'password', remote_photo_url: 'https://www.mansmedijs.lu.lv/files/2017/09/222.jpg')
+third_user = User.create!(first_name: 'Alan', last_name: 'PORTLAND',email: 'tutu@tutu.fr', password: 'password', remote_photo_url: 'https://ak7.picdn.net/shutterstock/videos/12666347/thumb/1.jpg')
 
 # To add when the Cloudinary will be ready :
 # remote_photo_url: 'https://unsplash.com/photos/khV4fTy6-D8'
@@ -19,15 +19,17 @@ CARS = {
   'Gallardo' => ['Lamborghini', 'pack wonder woman',450, third_user, '117 Boulevard de Valmy', 'Villeneuve-d\'Ascq'],
   'f50' => ['Ferrari', 'pack biere', 410, first_user, 'Rue de la Rotonde', 'Bethune'],
   '812' => ['Ferrari', 'pack batman', 430, second_user, '22 Avenue de l\'Europe', 'Leers'],
-  'RS' => ['Audi', 'pack spiderman', 480, third_user, '30 Rue du Général Leclerc', 'Hem']
+  'RS' => ['Audi', 'pack spiderman', 480, third_user, '30 Rue du Général Leclerc', 'Hem'],
+  'X90D' => ['Tesla', 'pack geek', 630, second_user, 'Chemin des Rigons', 'Les Pennes-Mirabeau']
 }
 
 IMG_URL = {
-  'DB11' => 'https://res.cloudinary.com/samirz/image/upload/v1534952659/ko84oe0hx4skm5wpdskb.jpg',
-  'Gallardo' => 'https://res.cloudinary.com/samirz/image/upload/v1534953970/ejuhzjyztwzxbnzgp9mo.jpg',
-  'f50' => 'https://res.cloudinary.com/samirz/image/upload/v1534954023/zxkzteznztfm5tq1vvjx.jpg',
-  '812' => 'https://res.cloudinary.com/samirz/image/upload/v1534954105/lmzcotuqrh36hxxgkkpz.jpg',
-  'RS' => 'https://res.cloudinary.com/samirz/image/upload/v1534954505/zpl2scybhvogt0wkjfyj.jpg'
+  'DB11' => 'http://www.automobile-magazine.fr/asset/cms/964x603/93882/config/75345/aston-martin-naura-pas-trop-tarde-a-devoiler-la-version-volante-de-sa-db11.jpg',
+  'Gallardo' => 'http://www.jet7prestiges.fr/photo/vehiculelo/72/lamborghini-gallardo.jpg',
+  'f50' => 'https://photos1.tf1.fr/660/370/ferrari-f50-angleterre-4e359a-0@1x.jpg',
+  '812' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ36NJ3XLgeBwF2NvbHLygPgh6i7gdnctFYZId8tsU-8f_iOM9GCg',
+  'RS' => 'https://www.viinz.com/wp-content/uploads/2017/11/essai-audi-tt-rs-coupe-2017-exterieur-84-2000x1333.jpg',
+  'X90D' => 'https://www.hertzpageo.com/img/new_dream_collection/Switerland/Big/Tesla-X---aussen-2-big.jpg'
 }
 
 puts 'Creating 5 cars...'
