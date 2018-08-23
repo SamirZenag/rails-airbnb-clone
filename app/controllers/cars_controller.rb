@@ -3,6 +3,11 @@ class CarsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
+    if params[:query].present?
+      @cars = Car.where(title: params[:query])
+    else
+      @cars = Car.all
+    end
     @cars = policy_scope(Car)
     p @cars
     @markers = @cars.map do |car|

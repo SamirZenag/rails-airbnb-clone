@@ -9,7 +9,13 @@
         </button>
 
         <h4>Refine search</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <%= form_tag cars_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find by model"
+          %>
+        <% end %>
       </div>
     </div>
 
@@ -24,8 +30,8 @@
       <div class="map-div">
         <div
           id="map"
-          style="width: 100%;
-          height: 500px;"
+          style="width: 90vh;
+          height: 300px;"
           data-markers="<%= @markers.to_json %>"
           >
         </div>
