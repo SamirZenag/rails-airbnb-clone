@@ -4,11 +4,12 @@ class CarsController < ApplicationController
 
   def index
     @cars = policy_scope(Car)
+    p @cars
     @markers = @cars.map do |car|
       {
         lat: car.latitude,
-        lng: car.longitude#,
-        # infoWindow: { content: render_to_string(partial: "/cars/map_box", locals: { car: car }) }
+        lng: car.longitude,
+        infoWindow: { content: "<bold>#{car.model}</bold> \n #{car.address} \n #{car.city}" }
       }
     end
   end

@@ -7,7 +7,7 @@
         <b>Model: <%= car.model %></b><br>
         <em>Brand: <%= car.brand %></em><br>
       </h5>
-      <%= cl_image_tag(car.user.photo, class: "card-user") %>
+      <%= cl_image_tag(car.user.photo, class: "card-user", :gravity=>"face", :width=>52, :height=>52, :crop=>"thumb" ) %>
       <p>Price per day: <%= car.price %> euros</p>
     </div>
   </div>
