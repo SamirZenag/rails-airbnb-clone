@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :cars, except: [:destroy] do
-    resources :bookings, only: [:new, :create]
+    resources :bookings, only: [:create]
   end
 
   get 'bookings/:booking_id/reviews/new', to: 'reviews#new'
