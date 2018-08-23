@@ -13,9 +13,9 @@
           <div class="row">
            <% @cars.each do |car|%>
              <div class="col-xs-12 col-md-6 col-lg-4">
-               <div class="dashboard-listings-card" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url(<%= car.picture %>);">
+               <div class="dashboard-listings-card" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url(<%= car.photo %>);">
               <%= link_to car_path(car) do %>
-                 <h3> <%= car.name %> </h3>
+                 <h3> <%= car.brand %> </h3>
               <% end %>
               <%= link_to edit_car_path(car), class: "edit-icon" do %>
                  <i class="fas fa-edit"></i>
@@ -52,10 +52,10 @@
                 </div>
                 <div class="message-body">
                   <p><strong>Booking details</strong></p>
-                  <p> your <%=booking.car.name%> is booked ! Enjoy</p>
+                  <p> your <%=booking.car.brand%> is booked ! Enjoy</p>
                 </div>
                 <div class="message-status">
-                  <p class="price"><%= booking.price %>EUR</p>
+                  <p class="price"><%= booking.car.price %>EUR</p>
                 </div>
               </div>
             </div>
