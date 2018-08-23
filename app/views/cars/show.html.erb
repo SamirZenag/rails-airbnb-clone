@@ -1,34 +1,10 @@
+<div class="banner banner_show" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= cl_image_path @car.photo %>')">
+</div>
+
 <div class="container">
   <h1><%= @car.brand %></h1>
   <h2><%= @car.model %></h2>
   <p>Tarif journalier: <%= @car.price %> €</p>
-  <hr>
-</div>
-
-
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-4">
-      <div class="card">
-        <span><%= image_tag "audirs8.jpg"%></span>
-      </div>
-    </div>
-    <div class="col-xs-12 col-sm-4">
-      <span><%= image_tag "audirs8.jpg"%></span>
-    </div>
-    <div class="col-xs-12 col-sm-4">
-      <span><%= image_tag "audirs8.jpg"%></span>
-    </div>
-    <div class="col-xs-12 col-sm-4">
-      <span><%= image_tag "audirs8.jpg"%></span>
-    </div>
-    <div class="col-xs-12 col-sm-4">
-      <span><%= image_tag "audirs8.jpg"%></span>
-    </div>
-    <div class="col-xs-12 col-sm-4">
-      <span><%= image_tag "audirs8.jpg"%></span>
-    </div>
-  </div>
   <hr>
 </div>
 
@@ -39,7 +15,7 @@
   </div>
   <div class="container-content">
     <h4>Owner</h4>
-    <p><%= @car.user %></p>
+    <p><%= @car.user.first_name %></p>
   </div>
   <div class="container-content">
     <h4>Reviews</h4>

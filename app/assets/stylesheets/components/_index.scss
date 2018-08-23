@@ -5,9 +5,19 @@
 @import "footer";
 @import "card";
 @import "button";
+@import "form";
 @import "banner";
 
 .refine-search {
   border: 2px solid black;
-  margin: 10px 0px 0px 0px;
+  margin: 10px 0px 0px 30px;
+  padding: 5px;
+}
+
+#map-button {
+  position: center;
+}
+
+.map-div {
+  padding: 10px;
 }

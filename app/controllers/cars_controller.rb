@@ -4,17 +4,25 @@ class CarsController < ApplicationController
 
   def index
     @cars = policy_scope(Car)
+    # @cars = Car
+    @markers = @cars.map do |car|
+      {
+        lat: car.latitude,
+        lng: car.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/cars/map_box", locals: { car: car }) }
+      }
+    end
   end
 
   def new
-    @car = current_user.cars.new
+    @car = Car.new
     authorize @car
   end
 
   def create
     @car = Car.new(car_params)
+    @car.user = current_user
     authorize @car
-
     if @car.save
       redirect_to car_path(@car)
     else

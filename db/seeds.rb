@@ -20,7 +20,7 @@ standard_user = User.create!(email: 'toto@toto.fr', password: 'password')
     brand: 'Renault',
     model:'4L',
     description:'Very nice car',
-    price: [100, 150, 200].sample ,
+    price: [100, 150, 200].sample,
     user: standard_user,
     address: Faker::Address.street_address,
     city: Faker::Address.city,
