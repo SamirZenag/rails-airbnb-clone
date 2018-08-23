@@ -4,7 +4,6 @@ class CarsController < ApplicationController
 
   def index
     @cars = policy_scope(Car)
-    # @cars = Car
     @markers = @cars.map do |car|
       {
         lat: car.latitude,
