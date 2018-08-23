@@ -4,12 +4,18 @@ class CarsController < ApplicationController
 
   def index
     if params[:query].present?
-      @cars = Car.where(title: params[:query])
+      sql_query = " \
+      cars.brand ILIKE :query \
+      OR cars.model ILIKE :query \
+      "
+      @cars = policy_scope(Car.where(sql_query, query: "%#{params[:query]}%"))
     else
-      @cars = Car.all
+      @cars = policy_scope(Car.all)
     end
-    @cars = policy_scope(Car)
-    p @cars
+
+    @brands = Car.all.map { |c| c.brand }.uniq
+    @models = Car.all.map { |c| c.model }.uniq
+    @prices = Car.all.map { |c| c.price }.uniq.sort
     @markers = @cars.map do |car|
       {
         lat: car.latitude,

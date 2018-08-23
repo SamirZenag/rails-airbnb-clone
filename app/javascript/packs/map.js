@@ -56,6 +56,20 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
   // map.setStyle('map_style');
   const markers = JSON.parse(mapElement.dataset.markers);
   map.addMarkers(markers);
+
+  mapZoom(markers, map)
+
+  const button = document.getElementById('map-button')
+  const list = document.getElementById('list')
+  mapElement.classList.add('hidden')
+  button.addEventListener('click', (event) => {
+    mapElement.classList.toggle('hidden')
+    mapZoom(markers, map)
+    list.classList.toggle('hidden')
+  })
+}
+
+function mapZoom(markers, map) {
   if (markers.length === 0) {
     map.setZoom(4);
   } else if (markers.length === 1) {
@@ -64,14 +78,6 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
   } else {
     map.fitLatLngBounds(markers);
   }
-
-  const button = document.getElementById('map-button')
-  const list = document.getElementById('list')
-  mapElement.classList.add('hidden')
-  button.addEventListener('click', (event) => {
-    mapElement.classList.toggle('hidden')
-    list.classList.toggle('hidden')
-  })
 }
 
 autocomplete();
