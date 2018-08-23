@@ -4,10 +4,12 @@
   <ul class="nav nav-tabs" role="tablist">
     <li id="home-title" role="presentation" class="active"><a id="home-title-design" class="tab"  href="#home" aria-controls="home" role="tab" data-toggle="tab">My listings</a></li>
     <li id="profile-title" role="presentation"><a id="profile-title-design"  class="tab" href="#profile" aria-controls="profile" role="tab" data-toggle="tab">My bookings</a></li>
+    <li id="profile-title" role="presentation"><a id="profile-title-design"  class="tab" href="#profile" aria-controls="profile" role="tab" data-toggle="tab">My rentals</a></li>
   </ul>
-
+</div>
   <!-- Tab panes -->
   <div class="tab-content">
+
     <div role="tabpanel" class="tab-pane active" id="home">
       <div class="container">
           <div class="row">
@@ -36,10 +38,7 @@
           </div>
       </div>
     </div>
-
     <div role="tabpanel" class="tab-pane" id="profile">
-
-
       <div class="container">
         <div class="row">
           <% @bookings.each do |booking|%>
@@ -62,6 +61,32 @@
           <%end%>
         </div>
       </div>
+    <div role="tabpanel" class="tab-pane" id="profile">
+      <div class="container">
+        <div class="row">
+          <% @cars.each do |c|%>
+            <%  c.bookings.each do |rental|%>
+              <div class="col-xs-12 col-md-12 col-lg-12">
+                <div class="message animated pulse" >
+                  <div class="message-name">
+                    <h3><strong> Dates :</strong></h3>
+                    <p><%= rental.start_date%></p>
+                    <p><%= rental.end_date%></p>
+                  </div>
+                  <div class="message-body">
+                    <p><strong>Rental details</strong></p>
+                    <p> your <%= rental.car.brand%> is booked ! Enjoy</p>
+                    <p>
+                  </div>
+                  <div class="message-status">
+                    <p class="price"><%= rental.car.price %>EUR</p>
+                  </div>
+                </div>
+              </div>
+            <%end%>
+          <%end%>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+

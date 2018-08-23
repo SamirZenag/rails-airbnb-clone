@@ -5,4 +5,5 @@ class DashboardController < ApplicationController
     @cars = current_user.cars
     @bookings = policy_scope(Booking)
   end
+
 end
