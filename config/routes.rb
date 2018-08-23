@@ -11,4 +11,7 @@ Rails.application.routes.draw do
   get 'dashboard/listings', to: 'dashboard#listings'
   get 'dashboard/rentals', to: 'dashboard#rentals'
 
+  get 'bookings/:id/accept', to: 'bookings#accept'
+  get 'bookings/:id/decline', to: 'bookings#decline'
+
 end
