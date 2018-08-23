@@ -34,15 +34,16 @@
       <div class="card_booking">
         <p><%= @car.price %> €/day</p>
         <div class="form-group text-center">
-          <%= simple_form_for [@car, @booking] do |f| %>
-             <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-              <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-            <%= link_to "Book & ride!", dashboard_listings_path, class: "btn btn-primary btn_book" %>
+          <%= form_tag(dashboard_listings_path, method: :get) do %>
+            <input type="date" name="begin_date" class="btn btn-ligth btn_book">
+            <input type="date" name="end_date" class="btn btn-ligth btn_book">
+          <%= submit_tag ("Drive a car"), class: 'btn btn-primary btn_book' %>
           <% end %>
         </div>
       </div>
     </div>
   </div>
+
   <div class="container">
     <i class="fas fa-chevron-left" aria-hidden="true">
         <%= link_to "Back to selection", cars_path, class: "link" %>
