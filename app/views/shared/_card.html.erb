@@ -7,8 +7,8 @@
         <b>Model: <%= car.model %></b><br>
         <em>Brand: <%= car.brand %></em><br>
       </h5>
+      <%= cl_image_tag(car.user.photo, class: "card-user") %>
       <p>Price per day: <%= car.price %> euros</p>
-      <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "card-user" %>
     </div>
   </div>
   <a class="card-link" href="/cars/<%= car.id %>" ></a>
