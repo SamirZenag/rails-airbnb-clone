@@ -9,7 +9,20 @@
         </button>
 
         <h4>Refine search</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <p>
+          <%= form_tag cars_path, method: :get do %>
+            <b>Select brand:</b>
+            <%= select_tag "brands", options_for_select(@brands) %>
+            <b>Select model:</b>
+            <%= select_tag "models", options_for_select(@models) %>
+            <b>Beginning:</b>
+            <%= date_field("user", "start_date", min: Date.today) %>
+            <b>End:</b>
+            <%= date_field("user", "end_date", min: Date.today) %>
+            <b>Select price:</b>
+            <%= select_tag "prices", options_for_select(@prices) %>
+          <% end %>
+        </p>
       </div>
     </div>
 
@@ -24,8 +37,8 @@
       <div class="map-div">
         <div
           id="map"
-          style="width: 100%;
-          height: 500px;"
+          style="width: 90vh;
+          height: 60vh;"
           data-markers="<%= @markers.to_json %>"
           >
         </div>
