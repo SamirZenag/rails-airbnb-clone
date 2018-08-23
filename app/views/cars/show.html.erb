@@ -6,7 +6,6 @@
     <div class="col-xs-12 col-sm-6">
       <h1><%= @car.brand %></h1>
       <h2><%= @car.model %></h2>
-
     </div>
     <div class="col-xs-12 col-sm-6">
       <div
@@ -43,6 +42,9 @@
     </div>
 
   </div>
+  <i class="fas fa-chevron-left" aria-hidden="true">
+      <%= link_to "Back to selection", cars_path, class: "link" %>
+    </i>
 </div>
 
 <div class="btn-align">
