@@ -1,0 +1,28 @@
+<div class="col-xs-12 col-md-12 col-lg-12">
+  <div class="message animated pulse" >
+    <div class="message-name">
+      <h3><strong> Dates :</strong></h3>
+      <p><%= booking.start_date%></p>
+      <p><%= booking.end_date%></p>
+    </div>
+    <div class="message-body">
+      <p><strong>Booking details</strong></p>
+      <p> your <%= booking.car.brand%> is booked !</p>
+      <p>
+    </div>
+    <div class="message-status">
+      <% if current_user == booking.user %>
+      <p class="status"> status <%= booking.status %></p>
+
+      <% if current_user == booking.car.user %>
+      <%= link_to "bookings/#{booking.id}/accept", class: "edit-icon-circle" do %>
+      <button type="button" class="btn btn-success">Accept</button>
+      <% end %>
+      <%= link_to "bookings/#{booking.id}/decline", class: "edit-icon-circle" do %>
+      <button type="button" class="btn btn-danger">Decline</button>
+      <% end %>
+
+      <p class="price"><%= booking.car.price %>EUR</p>
+    </div>
+  </div>
+</div>
