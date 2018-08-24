@@ -25,5 +25,17 @@
       <% end %>
       <p class="price">Total: <%= booking.car.price %>EUR</p>
     </div>
+    <div class="list-inline">
+      <% if booking.review && booking.user == current_user %>
+        <p>Thx for this review</p>
+      <% else %>
+
+        <%= simple_form_for [booking, @review] do |f| %>
+          <%= f.input :content %>
+          <%= f.submit "add a review", class: "btn btn-primary" %>
+        <% end %>
+      <% end %>
+    </div>
+
   </div>
 </div>

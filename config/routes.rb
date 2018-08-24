@@ -6,8 +6,11 @@ Rails.application.routes.draw do
     resources :bookings, only: [:create]
   end
 
-  get 'bookings/:booking_id/reviews/new', to: 'reviews#new'
-  post 'bookings/:booking_id/reviews', to: 'reviews#create', as: :booking_reviews
+  resources :bookings, only: [] do
+      resources :reviews, only: :create
+  end
+  # resources :reviews, only: [:create]
+  # post 'bookings/:booking_id/reviews', to: 'reviews#create', as: :booking_reviews
   get 'dashboard/listings', to: 'dashboard#listings'
   get 'dashboard/rentals', to: 'dashboard#rentals'
 
