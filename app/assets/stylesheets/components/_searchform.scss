@@ -1,8 +1,15 @@
-* {
-  margin: 0;
-  padding: 0;
+.searchform-class {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.5px solid #DDD;
+  margin: 10px 0px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.7);
+  border-radius: 3px;
+  padding: 3px 0px;
+  background-color: #DDD;
+  color: #555;
 }
-
 
 .flex-form {
   display: flex;

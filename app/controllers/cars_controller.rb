@@ -3,15 +3,15 @@ class CarsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    if params[:query].present?
-      sql_query = " \
-      cars.brand ILIKE :query \
-      OR cars.model ILIKE :query \
-      "
-      @cars = policy_scope(Car.where(sql_query, query: "%#{params[:query]}%"))
-    else
-      @cars = policy_scope(Car.all)
+    @cars = policy_scope(Car)
+
+    if params['/cars']
+      @cars = Car.near(params['/cars']['address'], 40) if params['/cars']['address'].present?
+      @cars = @cars.where(brand: params['/cars']['brand']) if params['/cars']['brand'].present?
+      @cars = @cars.where(model: params['/cars']['model']) if params['/cars']['model'].present?
+      # @cars = @cars.where(price: (price_wish = @cars.map{ |c| c.price }.min + (@cars.map{ |c| c.price }.max - @cars.map{ |c| c.price }.min)*params['/cars']['price'])) if params['/cars']['price'].present?
     end
+
 
     @brands = Car.all.map { |c| c.brand }.uniq
     @models = Car.all.map { |c| c.model }.uniq
