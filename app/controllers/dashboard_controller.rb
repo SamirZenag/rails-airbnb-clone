@@ -10,6 +10,8 @@ class DashboardController < ApplicationController
         @rentals << b
       end
     end
+
+    @review = Review.new
   end
 
 end

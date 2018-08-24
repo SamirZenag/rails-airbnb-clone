@@ -45,6 +45,7 @@ class CarsController < ApplicationController
     @car = Car.find(params[:id])
     authorize @car
     @booking = Booking.new
+    @reviews = @car.bookings.map { |b| b.review }
   end
 
   def edit

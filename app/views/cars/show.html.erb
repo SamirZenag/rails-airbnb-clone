@@ -27,8 +27,12 @@
       <p><%= @car.description %></p></br>
       <h4>Owner</h4>
       <p><%= @car.user.first_name %></p></br>
-      <h4>Reviews :car.booking.rating</h4>
-      <p>@booking.review </p>
+      <h4>Reviews :</h4>
+      <% if @reviews.length > 0 %>
+        <% @reviews.each do |review| %>
+          <p><%= review.content %></p>
+        <% end %>
+      <% end %>
     </div>
     <div class="col-xs-12 col-sm-6">
       <div class="card_booking">
