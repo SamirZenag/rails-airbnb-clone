@@ -1,18 +1,7 @@
-<form method="get" action="<%= cars_path %>" class="flex-form">
-
-  <input type="search" placeholder="Where do you wanna go?" id="search" />
-  <label for="from">From</label>
-  <input type="date" name="from" />
-
-  <label for="to">To</label>
-  <input type="date" name="to" />
-
-  <select name="brands" id="brands">
-    <option value="1">Lambo</option>
-    <option value="2">Ferrari</option>
-    <option value="3">Maserati</option>
-    <option value="4">Aston Martin</option>
-    <option value="5">Bugatti</option>
-  </select>
-    <input type="submit" value="Start" />
-</form>
+<div class='searchform-class'>
+    <%= simple_form_for cars_path, url: cars_path, method: :get, html: {class: 'form-inline form-group'} do |f| %>
+      <%= f.input_field :address, placeholder: 'Where do you wanna go?', class: 'form-control search', style: 'width: 270px ' %>
+      <%= f.select :brand, options_for_select(@brands), class: 'form-control', include_blank: 'Choose a brand' %>
+      <%= f.submit 'Ride', class: 'btn btn-default' %>
+    <% end %>
+</div>

@@ -1,33 +1,41 @@
 <div class="container">
-  <%= render 'shared/searchform' %>
   <div class="row">
     <div class="col-xs-0 col-sm-3 ">
-      <div class="refine-search">
+      <div class='map-button searchform-class'>
         <button type="button" id="map-button" class="btn btn-success">
           <i class="fas fa-map-marked-alt"></i>
           Switch
         </button>
-
+      </div>
+      <div class="refine-search">
         <h4>Refine search</h4>
-        <p>
-          <%= form_tag cars_path, method: :get do %>
+        <br>
+        <div>
+          <%= simple_form_for cars_path, url: cars_path, method: :get do |f| %>
+            <b>Where you wanna go?</b>
+            <%= f.text_field :address, placeholder: 'Where ...', class: 'form-contro search' %>
+            <br>
             <b>Select brand:</b>
-            <%= select_tag "brands", options_for_select(@brands) %>
+            <%= f.select :brand, options_for_select(@brands), class: 'form-control', include_blank: 'Choose a brand' %>
+            <br>
             <b>Select model:</b>
-            <%= select_tag "models", options_for_select(@models) %>
-            <b>Beginning:</b>
-            <%= date_field("user", "start_date", min: Date.today) %>
-            <b>End:</b>
-            <%= date_field("user", "end_date", min: Date.today) %>
-            <b>Select price:</b>
-            <%= select_tag "prices", options_for_select(@prices) %>
+            <%= f.select :model, options_for_select(@models), class: 'form-control', include_blank: 'Choose a model' %>
+            <br>
+            <b>Start date:</b>
+            <%= f.text_field :start_date, :placeholder => 'dd/mm/yyyy', class: 'form-control datepicker' %>
+            <div>
+            <b>End date:</b>
+            <%= f.text_field :end_date, :placeholder => 'dd/mm/yyyy', class: 'form-control datepicker' %>
+            </div>
+
+            <%= f.submit 'Ride', class: 'btn btn-default' %>
           <% end %>
-        </p>
+        </div>
       </div>
     </div>
 
     <div class="col-xs-12 col-sm-9">
-      <div class="row" id="list" style="width: 100%;">
+      <div class="row" id="list" >
         <% @cars.each do |car| %>
           <div class="col-xs-12 col-sm-6">
             <%= render 'shared/card', car: car %>
@@ -37,8 +45,8 @@
       <div class="map-div">
         <div
           id="map"
-          style="width: 90vh;
-          height: 60vh;"
+          style="width: 100%;
+          height: 100%;"
           data-markers="<%= @markers.to_json %>"
           >
         </div>
