@@ -1,14 +1,13 @@
 <div class="col-xs-12 col-md-12 col-lg-12">
   <div class="message animated pulse" >
     <div class="message-name">
-      <p><strong>Numéro de réservation:</strong> <%= booking.id %></p>
+      <p><strong>Booking number:</strong> <%= booking.id %></p>
       <h4>Dates :</h4>
       <p><%= booking.start_date%></p>
       <p><%= booking.end_date%></p>
     </div>
     <div class="message-body">
       <p><strong>Booking details</strong></p>
-      <p> your <%= booking.car.brand%> is booked !</p>
       <p>
     </div>
     <div class="message-status">
@@ -24,7 +23,7 @@
           <% end %>
         <% end %>
       <% end %>
-      <p class="price"><%= booking.car.price %>EUR</p>
+      <p class="price">Total: <%= booking.car.price %>EUR</p>
     </div>
   </div>
 </div>
