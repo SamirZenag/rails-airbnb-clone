@@ -27,20 +27,11 @@ CARS_LIST = {
   "Cayman" => ["Porsche", 'Very nice car', third_user, 'gare', 'Caudry'],
   "Macan" => ["Porsche", 'Very nice car', third_user, 'gare', 'Faience'],
   "Panamera" => ["Porsche", 'Very nice car', third_user, 'gare', 'Faience'],
-  "Subaru" => => ['Subaru', 'Nice asian car', first_user, 'hopital', 'Florence'],
   "BRZ" => ['Subaru', 'Nice asian car', third_user, 'hopital', 'Cannes'],
   "Forester" => ['Subaru', 'Nice asian car', third_user, 'hopital', 'Marne la Vallée'],
   "Impreza" => ['Subaru', 'Nice asian car', third_user, 'hopital', 'Monaco'],
   "Impreza Wagon" => ['Subaru', 'Nice asian car', third_user, 'hopital', 'Caen'],
   "Justy" => ['Subaru', 'Nice asian car', first_user, 'hopital', 'Rouen'],
-  "Legacy" => ['Subaru', 'Nice asian car', first_user, 'hopital', 'Reims'],
-  "Legacy Wagon" => ['Subaru', 'Nice asian car', first_user, 'hopital', 'Metz'],
-  "Legacy Outback" => ['Subaru', 'Nice asian car', first_user, 'hopital', 'Vannes'],
-  "Levorg" => ['Subaru', 'Nice asian car', first_user, 'hopital', 'Le Crotoy'],
-  "Outback" => ['Subaru', 'Nice asian car', first_user, 'hopital', 'Orléans'],
-  "SVX" => ['Subaru', 'Nice asian car', first_user, 'hopital', 'Le Havre'],
-  "Tribeca" => ['Subaru', 'Nice asian car', first_user, 'hopital', 'Grenoble'],
-  "Tribeca B9" => ['Subaru', 'Nice asian car', first_user, 'hopital', 'Toulouse'],
   'DB11' => ['Aston Martin', 'pack iron man', first_user, 'Rue Marat', 'Bobigny'],,
   'Gallardo' => ['Lamborghini', 'pack wonder woman', third_user, '117 Boulevard de Valmy', 'Villeneuve-d\'Ascq'],,
   'f50' => ['Ferrari', 'pack biere', first_user, 'Rue de la Rotonde', 'Bethune'],,
@@ -60,32 +51,23 @@ CARS = {
 }
 
 IMG_URL = {
-  "911 Carrera" => ["Porsche", 'Very nice car', second_user, 'gare', 'Nantes'],
-  "911 Carrera Cabrio" => ["Porsche", 'Very nice car', second_user, 'gare', 'Biaritz'],
-  "911 Targa" => ["Porsche", 'Very nice car', second_user, 'gare', 'Saint-Tropez'],
-  "911 Turbo" => ["Porsche", 'Very nice car', second_user, 'gare', 'Metz'],
-  "924" => ["Porsche", 'Very nice car', second_user, 'gare', 'Bordeau'],
-  "944" => ["Porsche", 'Very nice car', second_user, 'gare', 'Nantes'],
-  "997" => ["Porsche", 'Very nice car', second_user, 'gare', 'Rennes'],
-  "Boxster" => ["Porsche", 'Very nice car', second_user, 'gare', 'Bethune'],
-  "Cayenne" => ["Porsche", 'Very nice car', third_user, 'gare', 'Dunkerque'],
-  "Cayman" => ["Porsche", 'Very nice car', third_user, 'gare', 'Caudry'],
-  "Macan" => ["Porsche", 'Very nice car', third_user, 'gare', 'Faience'],
-  "Panamera" => ["Porsche", 'Very nice car', third_user, 'gare', 'Faience'],
-  "Subaru" => => ['Subaru', 'Nice asian car', first_user, 'hopital', 'Florence'],
-  "BRZ" => ['Subaru', 'Nice asian car', third_user, 'hopital', 'Cannes'],
-  "Forester" => ['Subaru', 'Nice asian car', third_user, 'hopital', 'Marne la Vallée'],
-  "Impreza" => ['Subaru', 'Nice asian car', third_user, 'hopital', 'Monaco'],
-  "Impreza Wagon" => ['Subaru', 'Nice asian car', third_user, 'hopital', 'Caen'],
-  "Justy" => ['Subaru', 'Nice asian car', first_user, 'hopital', 'Rouen'],
-  "Legacy" => ['Subaru', 'Nice asian car', first_user, 'hopital', 'Reims'],
-  "Legacy Wagon" => ['Subaru', 'Nice asian car', first_user, 'hopital', 'Metz'],
-  "Legacy Outback" => ['Subaru', 'Nice asian car', first_user, 'hopital', 'Vannes'],
-  "Levorg" => ['Subaru', 'Nice asian car', first_user, 'hopital', 'Le Crotoy'],
-  "Outback" => ['Subaru', 'Nice asian car', first_user, 'hopital', 'Orléans'],
-  "SVX" => ['Subaru', 'Nice asian car', first_user, 'hopital', 'Le Havre'],
-  'Tribeca'
-  'Tribeca B9'
+  '911 Carrera' => 'https://upload.wikimedia.org/wikipedia/commons/0/0f/2002_911C4S.JPG',
+  '911 Carrera Cabrio' => 'https://www.netcarshow.com/Porsche-911_Carrera_Cabriolet-2013-wallpaper.jpg',
+  '911 Targa' => 'https://4cd598e3f6d533189ea3-47577a5222eca74d8797f62840b060bf.ssl.cf1.rackcdn.com/WP0BB2A94JS134771/6dffdc29795a3c88748e4b9cff8043a6.jpg',
+  '911 Turbo' => 'http://t911.wpengine.com/wp-content/uploads/2015/10/996-Turbo-S-driving.jpg',
+  '924' => 'http://porscheclub-924-944-968.fr/hosting924944968/41198420170907191112.jpg',
+  '944' => 'https://cdn.bringatrailer.com/wp-content/uploads/2017/10/59e130481dd46_140251-940x700.jpg',
+  '997' => 'https://www.porscheclubgb.com/getmedia/6c2c920d-4893-4af0-845a-6799a05188c7/Porsche_997_Buyers_Guide_633.jpg',
+  'Boxster' => 'https://galeri13.uludagsozluk.com/631/ataturk-un-en-sevdigi-araba_1234780.jpg',
+  'Cayenne' => 'https://res.cloudinary.com/jpress/image/fetch/c_fill,f_auto,h_596,q_auto:eco,w_900/https://inews.co.uk/wp-content/uploads/2017/11/porsche-cayenne-s-4-star-car.jpg',
+  'Cayman' => 'https://s.auto.drom.ru/img4/catalog/photos/fullsize/porsche/cayman/porsche_cayman_35752.jpg',
+  'Macan' => 'http://www.executivestyle.com.au/content/dam/images/3/9/t/i/6/image.related.articleLeadwide.620x349.39u2n.png/1428455972091.jpg',
+  'Panamera' => 'http://sf1.viepratique.fr/wp-content/uploads/sites/9/2016/11/okpanameraexecutive3-750x410.jpg',
+  'BRZ' => 'https://i.kinja-img.com/gawker-media/image/upload/s--E8-oS6xw--/c_scale,f_auto,fl_progressive,q_80,w_800/sxp1igg5t5i652jit0d4.jpg',
+  'Forester' => 'http://newcarsportal.com/wp-content/uploads/2018/07/2019-Subaru-Forester-2.jpg',
+  'Impreza' => "https://img03.carview.co.jp/trade/img06/cars/2455216/21515124/japan%20car/2007+subaru+impreza+wrx+sti/01w.jpg",
+  'Impreza Wagon' => 'http://4-photos7.motorcar.com/used-2013-subaru-impreza_wagon_wrx-certifiedwrxpremiumwagon5spdnavigation-1186-13496773-1-1024.jpg',
+  'Justy' => 'http://2.bp.blogspot.com/__9TTj0s27Vk/SaM2fBbswpI/AAAAAAAAA1o/FFZrFpxFEU4/s400/Subaru+Justy.jpg',
   'DB11' => 'http://www.automobile-magazine.fr/asset/cms/964x603/93882/config/75345/aston-martin-naura-pas-trop-tarde-a-devoiler-la-version-volante-de-sa-db11.jpg',
   'Gallardo' => 'http://www.jet7prestiges.fr/photo/vehiculelo/72/lamborghini-gallardo.jpg',
   'f50' => 'https://cdn.motor1.com/images/mgl/4AGRk/s1/1995-ferrari-f50-en-vente-chez-rm-sothebys.jpg',
@@ -94,7 +76,7 @@ IMG_URL = {
   'X90D' => 'https://www.hertzpageo.com/img/new_dream_collection/Switerland/Big/Tesla-X---aussen-2-big.jpg'
 }
 
-puts 'Creating 5 cars...'
+puts 'Creating 23 cars...'
 
 CARS_LIST.each do |car, value|
   Car.create!(
@@ -102,44 +84,9 @@ CARS_LIST.each do |car, value|
     remote_photo_url: IMG_URL[car],
     brand: value[0],
     description: value[1],
-    price: value[2],
+    price: (350..450).sample,
     user: value[3],
     address: value[4],
     city: value[5]
   )
 end
-
-# puts 'Creating 3 cars...'
-
-# car = Car.create!(
-#     model: 'DB11',
-#     remote_photo_url: 'https://res.cloudinary.com/samirz/image/upload/v1534953970/ejuhzjyztwzxbnzgp9mo.jpg',
-#     brand: 'Aston Martin',
-#     description: 'pack iron man',
-#     price: 540,
-#     user: first_user,
-#     address: '12 rue du general Leclerc',
-#     city: 'Paris'
-#     )
-
-# car = Car.create!(
-#     model: 'Gallardo',
-#     remote_photo_url: 'https://res.cloudinary.com/samirz/image/upload/v1534953970/ejuhzjyztwzxbnzgp9mo.jpg',
-#     brand: 'Lamborghini',
-#     description: 'pack wonder woman',
-#     price: 450,
-#     user: third_use,
-#     address: '12 rue du general Leclerc',
-#     city: 'Lille'
-#     )
-
-# car = Car.create!(
-#     model: 'f50',
-#     remote_photo_url: 'https://res.cloudinary.com/samirz/image/upload/v1534953970/ejuhzjyztwzxbnzgp9mo.jpg',
-#     brand: 'Ferrari',
-#     description: 'pack de biere',
-#     price: 410,
-#     user: first_user,
-#     address: '12 rue du general Leclerc',
-#     city: 'Bethune'
-#     )
