@@ -2,11 +2,14 @@
   <div class="row" id="my-profile">
     <div class="col-lg-12">
       <h3><strong> My Profile :</strong></h3>
-        <p><%= current_user.photo %><p>
+        <p><%= cl_image_tag current_user.photo, height: 200 %><p>
         <p><%= current_user.first_name %></p>
         <p><%= current_user.last_name%></p>
         <p><%= current_user.email%></p>
     </div>
+  </div>
+  <div class="bnt-align" id="edit-profile-btn">
+    <%= link_to "edit your profile", edit_user_registration_path(@current_user.id), id:"submit-btn" %>
   </div>
 
   <!-- Nav tabs -->
