@@ -9,14 +9,8 @@ first_user = User.create!(first_name: 'Josh', last_name: 'DENVER', email: 'toto@
 second_user = User.create!(first_name: 'Alison', last_name: 'KIVER', email: 'tata@tata.fr', password: 'password', remote_photo_url: 'https://www.mansmedijs.lu.lv/files/2017/09/222.jpg')
 third_user = User.create!(first_name: 'Alan', last_name: 'PORTLAND',email: 'tutu@tutu.fr', password: 'password', remote_photo_url: 'https://ak7.picdn.net/shutterstock/videos/12666347/thumb/1.jpg')
 
-# To add when the Cloudinary will be ready :
-# remote_photo_url: 'https://unsplash.com/photos/khV4fTy6-D8'
-# remote_photo_url: 'https://unsplash.com/photos/r1Pd018Hq9w'
-# remote_photo_url: 'https://unsplash.com/photos/YfykaDg5sX4'
-
 CARS_LIST = {
   "911 Carrera" => ["Porsche", 'Very nice car', second_user, 'gare', 'Nantes'],
-  "911 Carrera Cabrio" => ["Porsche", 'Very nice car', second_user, 'gare', 'Biaritz'],
   "911 Targa" => ["Porsche", 'Very nice car', second_user, 'gare', 'Saint-Tropez'],
   "911 Turbo" => ["Porsche", 'Very nice car', second_user, 'gare', 'Metz'],
   "924" => ["Porsche", 'Very nice car', second_user, 'gare', 'Bordeau'],
@@ -29,14 +23,13 @@ CARS_LIST = {
   "Panamera" => ["Porsche", 'Very nice car', third_user, 'gare', 'Faience'],
   "BRZ" => ['Subaru', 'Nice asian car', third_user, 'hopital', 'Cannes'],
   "Forester" => ['Subaru', 'Nice asian car', third_user, 'hopital', 'Marne la Vallée'],
-  "Impreza" => ['Subaru', 'Nice asian car', third_user, 'hopital', 'Monaco'],
   "Impreza Wagon" => ['Subaru', 'Nice asian car', third_user, 'hopital', 'Caen'],
   "Justy" => ['Subaru', 'Nice asian car', first_user, 'hopital', 'Rouen'],
-  'DB11' => ['Aston Martin', 'pack iron man', first_user, 'Rue Marat', 'Bobigny'],,
-  'Gallardo' => ['Lamborghini', 'pack wonder woman', third_user, '117 Boulevard de Valmy', 'Villeneuve-d\'Ascq'],,
-  'f50' => ['Ferrari', 'pack biere', first_user, 'Rue de la Rotonde', 'Bethune'],,
-  '812' => ['Ferrari', 'pack batman', second_user, '22 Avenue de l\'Europe', 'Leers'],,
-  'RS' => ['Audi', 'pack spiderman', third_user, '30 Rue du Général Leclerc', 'Hem'],,
+  'DB11' => ['Aston Martin', 'pack iron man', first_user, 'Rue Marat', 'Bobigny'],
+  'Gallardo' => ['Lamborghini', 'pack wonder woman', third_user, '117 Boulevard de Valmy', 'Villeneuve-d\'Ascq'],
+  'f50' => ['Ferrari', 'pack biere', first_user, 'Rue de la Rotonde', 'Bethune'],
+  '812' => ['Ferrari', 'pack batman', second_user, '22 Avenue de l\'Europe', 'Leers'],
+  'RS' => ['Audi', 'pack spiderman', third_user, '30 Rue du Général Leclerc', 'Hem'],
   'X90D' => ['Tesla', 'pack geek', second_user, 'Chemin des Rigons', 'Les Pennes-Mirabeau']
 }
 
@@ -47,12 +40,11 @@ CARS = {
 "Hummer" => ["H2", "H3"],
 "Infiniti" => ["EX", "FX", "G", "G Coupé", "M", "Q", "QX"],
 "Jaguar" => ["Daimler", "F-Pace", "F-Type", "S-Type", "Sovereign", "X-Type", "X-type Estate", "XE", "XF", "XJ", "XJ12", "XJ6", "XJ8", "XJ8", "XJR", "XK", "XK8 Convertible", "XKR", "XKR Convertible"],
-"Jeep" => ["Cherokee", "Commander", "Compass", "Grand Cherokee", "Patriot", "Renegade", "Wrangler"]}
+"Jeep" => ["Cherokee", "Commander", "Compass", "Grand Cherokee", "Patriot", "Renegade", "Wrangler"]
 }
 
 IMG_URL = {
   '911 Carrera' => 'https://upload.wikimedia.org/wikipedia/commons/0/0f/2002_911C4S.JPG',
-  '911 Carrera Cabrio' => 'https://www.netcarshow.com/Porsche-911_Carrera_Cabriolet-2013-wallpaper.jpg',
   '911 Targa' => 'https://4cd598e3f6d533189ea3-47577a5222eca74d8797f62840b060bf.ssl.cf1.rackcdn.com/WP0BB2A94JS134771/6dffdc29795a3c88748e4b9cff8043a6.jpg',
   '911 Turbo' => 'http://t911.wpengine.com/wp-content/uploads/2015/10/996-Turbo-S-driving.jpg',
   '924' => 'http://porscheclub-924-944-968.fr/hosting924944968/41198420170907191112.jpg',
@@ -65,7 +57,6 @@ IMG_URL = {
   'Panamera' => 'http://sf1.viepratique.fr/wp-content/uploads/sites/9/2016/11/okpanameraexecutive3-750x410.jpg',
   'BRZ' => 'https://i.kinja-img.com/gawker-media/image/upload/s--E8-oS6xw--/c_scale,f_auto,fl_progressive,q_80,w_800/sxp1igg5t5i652jit0d4.jpg',
   'Forester' => 'http://newcarsportal.com/wp-content/uploads/2018/07/2019-Subaru-Forester-2.jpg',
-  'Impreza' => "https://img03.carview.co.jp/trade/img06/cars/2455216/21515124/japan%20car/2007+subaru+impreza+wrx+sti/01w.jpg",
   'Impreza Wagon' => 'http://4-photos7.motorcar.com/used-2013-subaru-impreza_wagon_wrx-certifiedwrxpremiumwagon5spdnavigation-1186-13496773-1-1024.jpg',
   'Justy' => 'http://2.bp.blogspot.com/__9TTj0s27Vk/SaM2fBbswpI/AAAAAAAAA1o/FFZrFpxFEU4/s400/Subaru+Justy.jpg',
   'DB11' => 'http://www.automobile-magazine.fr/asset/cms/964x603/93882/config/75345/aston-martin-naura-pas-trop-tarde-a-devoiler-la-version-volante-de-sa-db11.jpg',
@@ -84,9 +75,9 @@ CARS_LIST.each do |car, value|
     remote_photo_url: IMG_URL[car],
     brand: value[0],
     description: value[1],
-    price: (350..450).sample,
-    user: value[3],
-    address: value[4],
-    city: value[5]
+    price: (350..450).to_a.sample,
+    user: value[2],
+    address: value[3],
+    city: value[4]
   )
 end
