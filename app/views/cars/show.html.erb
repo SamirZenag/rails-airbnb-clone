@@ -32,15 +32,20 @@
     </div>
     <div class="col-xs-12 col-sm-6">
       <div class="card_booking">
-        <h4><%= @car.price%> €/day</h4>
-        <p>Date</p>
-        <p>Nombre de jour:</p>
-        <hr>
-        <p>Total: €</p>
-        <%= link_to "Book & ride!", dashboard_listings_path, class: "btn btn-primary" %>
+        <p><%= @car.price %> €/day</p>
+        <div class="form-group text-center">
+          <%= form_tag(car_bookings_path(@car), method: :post) do %>
+            <b>Beginning:</b>
+            <%= date_field(:booking, "start_date", min: Date.today) %>
+            <b>End:</b>
+            <%= date_field(:booking, "end_date", min: Date.today) %>
+          <%= submit_tag ("Drive a car"), class: 'btn btn-primary btn_book' %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
+
   <div class="container">
     <i class="fas fa-chevron-left" aria-hidden="true">
         <%= link_to "Back to selection", cars_path, class: "link" %>

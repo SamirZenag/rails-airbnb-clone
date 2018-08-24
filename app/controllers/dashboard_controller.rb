@@ -4,6 +4,12 @@ class DashboardController < ApplicationController
   def listings
     @cars = current_user.cars
     @bookings = policy_scope(Booking)
+    @rentals = []
+    @cars.each do |car|
+      car.bookings.each do |b|
+        @rentals << b
+      end
+    end
   end
 
 end

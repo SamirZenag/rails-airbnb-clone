@@ -10,10 +10,10 @@ class BookingsController < ApplicationController
     @car = Car.find(params[:car_id])
     @booking.car = @car
     @booking.user = current_user
-    @booking.price = ((@booking.end_date - @booking.start_date) + 1) * @car.price
+    @booking.car.price = ((@booking.end_date - @booking.start_date) + 1) * @car.price
     authorize(@booking)
     if @booking.save
-      redirect_to car_path(@car)
+      redirect_to dashboard_listings_path(@car)
     else
       render "cars/#{car.id}/show"
     end
@@ -37,19 +37,10 @@ class BookingsController < ApplicationController
     redirect_to bookings_path
   end
 
-  private
-
-  def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :review, :rating)
-  end
-
-  def set_booking
-    @booking = Booking.find(params[:id])
-  end
-
   def accept
     @booking = Booking.find(params[:id])
     @booking.status = 1
+    authorize @booking
     flash[:notice] = "Your booking has been accepted"
     if @booking.save
       redirect_to dashboard_listings_path(@booking)
@@ -61,12 +52,23 @@ class BookingsController < ApplicationController
   def decline
     @booking = Booking.find(params[:id])
     @booking.status = 2
+    authorize @booking
     flash[:alert] = "Your booking has been declined"
     if @booking.save
       redirect_to dashboard_listings_path(@booking)
     else
       flash[:alert] = "Something went wrong"
     end
+  end
+
+  private
+
+  def booking_params
+    params.require(:booking).permit(:start_date, :end_date, :review, :rating)
+  end
+
+  def set_booking
+    @booking = Booking.find(params[:id])
   end
 
 end
