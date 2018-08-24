@@ -34,11 +34,11 @@
       <div class="card_booking">
         <p><%= @car.price %> €/day</p>
         <div class="form-group text-center">
-          <%= form_tag(dashboard_listings_path, method: :get) do %>
+          <%= form_tag(car_bookings_path(@car), method: :post) do %>
             <b>Beginning:</b>
-            <%= date_field("user", "start_date", min: Date.today) %>
+            <%= date_field(:booking, "start_date", min: Date.today) %>
             <b>End:</b>
-            <%= date_field("user", "end_date", min: Date.today) %>
+            <%= date_field(:booking, "end_date", min: Date.today) %>
           <%= submit_tag ("Drive a car"), class: 'btn btn-primary btn_book' %>
           <% end %>
         </div>

@@ -9,4 +9,12 @@ class BookingPolicy < ApplicationPolicy
     record.user == user
   end
 
+  def accept?
+    record.car.user == user
+  end
+
+  def decline?
+    record.car.user == user
+  end
+
 end

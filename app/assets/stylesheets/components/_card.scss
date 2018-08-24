@@ -56,3 +56,24 @@
   height: 80px;
   padding: 10px;
 }
+
+.card_dashboard {
+  height: 100px;
+  width : 30%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: black;
+  // position: relative;
+  margin: 10px;
+  border: 0.5px solid black;
+}
+
+.card_dashboard_footer {
+  position: relative;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  height: 80px;
+  padding: 10px;
+}

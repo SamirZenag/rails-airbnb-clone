@@ -12,28 +12,18 @@
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
     <li id="home-title" role="presentation" class="active"><a id="home-title-design" class="tab"  href="#home" aria-controls="home" role="tab" data-toggle="tab">My listings</a></li>
-    <li id="profile-title" role="presentation"><a id="profile-title-design"  class="tab" href="#profile" aria-controls="profile" role="tab" data-toggle="tab">My bookings</a></li>
-    <li id="profile-title" role="presentation"><a id="profile-title-design"  class="tab" href="#profile" aria-controls="profile" role="tab" data-toggle="tab">My rentals</a></li>
+    <li id="bookings-title" role="presentation"><a id="bookings-title-design"  class="tab" href="#bookings" aria-controls="bookings" role="tab" data-toggle="tab">My bookings</a></li>
+    <li id="rentals-title" role="presentation"><a id="rentals-title-design"  class="tab" href="#rentals" aria-controls="rentals" role="tab" data-toggle="tab">My rentals</a></li>
   </ul>
 </div>
   <!-- Tab panes -->
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="home">
-      <div class="container">
+      <div class="container" style="height: 60vh; background-color: white">
           <div class="row">
            <% @cars.each do |car|%>
              <div class="col-xs-12 col-md-6 col-lg-4">
-               <div class="dashboard-listings-card" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url(<%= car.photo %>);">
-              <%= link_to car_path(car) do %>
-                 <h3> <%= car.brand %> </h3>
-              <% end %>
-              <%= link_to edit_car_path(car), class: "edit-icon" do %>
-                 <i class="fas fa-edit"></i>
-              <% end %>
-              <%= link_to car_path(car), class: "trash-icon", method: :delete, data: {confirm:"Are you sure ?"} do %>
-                 <i class="fas fa-trash"></i>
-              <% end %>
-                </div>
+                <%= render 'shared/card', car: car %>
              </div>
             <%end%>
             <div class="col-xs-12 col-md-6 col-lg-4">
@@ -46,21 +36,20 @@
           </div>
       </div>
     </div>
-    <div role="tabpanel" class="tab-pane" id="profile">
-      <div class="container">
+    <div role="tabpanel" class="tab-pane" id="bookings">
+      <div class="container" style="height: 60vh; background-color: white">
         <div class="row">
           <% @bookings.each do |booking|%>
             <%= render 'dashboard/bookingcard', booking: booking %>
           <%end%>
         </div>
       </div>
-    <div role="tabpanel" class="tab-pane" id="profile">
-      <div class="container">
+    </div>
+    <div role="tabpanel" class="tab-pane" id="rentals">
+      <div class="container" style="height: 60vh; background-color: white">
         <div class="row">
-          <% @cars.each do |c|%>
-            <%  c.bookings.each do |rental|%>
-              <%= render 'dashboard/bookingcard', booking: rental %>
-            <%end%>
+          <%  @rentals.each do |rental|%>
+            <%= render 'dashboard/bookingcard', booking: rental %>
           <%end%>
         </div>
       </div>
