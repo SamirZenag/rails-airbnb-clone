@@ -1,7 +1,7 @@
 class Car < ApplicationRecord
   belongs_to :user
-  has_many :reviews, through: :bookings
   has_many :bookings
+  has_many :reviews, through: :bookings, dependent: :destroy
   mount_uploader :photo, PhotoUploader
 
   geocoded_by :full_address
